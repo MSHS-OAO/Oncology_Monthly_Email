@@ -17,13 +17,13 @@ send_list <- c("armando.villegas@mssm.edu","oao@mssm.edu")
 email_subject <- "Simple Email Test"
 
 ##run monthly processing
-source("pull_and_process_monthly.R")
+source("Scripts/pull_and_process_monthly.R")
 
 ##Use blastula to construct email to send
-render_email(input = "Markdown Scripts/email_body.Rmd",
+render_email(input = "Scripts/email_body.Rmd",
 ) %>%
   add_attachment(
-    file = "Test.html"
+    file = save_file_path
   ) %>%
   smtp_send(
     from = "armando.villegas@mssm.edu",
