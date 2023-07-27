@@ -1,0 +1,7 @@
+---
+title: "Email Document"
+output: blastula::blastula_email
+---
+
+
+This is a simple test email.
