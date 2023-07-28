@@ -3,6 +3,7 @@ title: "Email Document"
 output: blastula::blastula_email
 ---
 
+Hello,
 
 Please find the Oncology data for `r min_date` `r max_date` attached.
 
