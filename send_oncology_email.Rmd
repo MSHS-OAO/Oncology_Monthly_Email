@@ -23,7 +23,8 @@ source("Scripts/pull_and_process_monthly.R")
 render_email(input = "Scripts/email_body.Rmd",
 ) %>%
   add_attachment(
-    file = save_file_path
+    file = save_compressed_file_path,
+    filename = paste0("Oncology Data ", month_year, ".zip")
   ) %>%
   smtp_send(
     from = "armando.villegas@mssm.edu",
