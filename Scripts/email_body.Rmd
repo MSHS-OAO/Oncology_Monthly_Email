@@ -3,11 +3,6 @@ title: "Email Document"
 output: blastula::blastula_email
 ---
 
-# ```{r, include=FALSE}
-# #run monthly processing
-# source("pull_and_process_monthly.R")
-# ```
-
 Hello,
 
 Please find the Oncology data for `r min_date` `r max_date` attached.
