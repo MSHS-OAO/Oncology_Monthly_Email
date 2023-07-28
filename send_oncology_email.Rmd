@@ -20,9 +20,13 @@ email_subject <- "Oncology Monthly Data Pull"
 ##run monthly processing
 source("Scripts/pull_and_process_monthly.R")
 
-##Use blastula to construct email to send
+#
+sinai_logo <- add_image(file = "www/Sinai_logo_color.png",
+                        width = 100)
 
-compose_email(body = render_email("Scripts/email_body.Rmd")$html_html,
+##Use blastula to construct email to send
+compose_email(header = sinai_logo,
+              body = render_email("Scripts/email_body.Rmd")$html_html,
               footer = "This is an auto generated email") %>%
   add_attachment(
     file = save_compressed_file_path,
