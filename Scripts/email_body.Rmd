@@ -4,7 +4,11 @@ output: blastula::blastula_email
 ---
 
 
-Please find the data for the previous month attached.
+Please find the Oncology data for `r min_date` `r max_date` attached.
 
-Best,
+Best,  
 Armando
+
+```{cat, engine.opts=list(file = "footer.html")}
+<p>This is an auto generated email</p>
+```
