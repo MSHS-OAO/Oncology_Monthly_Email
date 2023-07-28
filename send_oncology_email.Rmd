@@ -35,15 +35,16 @@ sinai_logo <- add_image(file = "www/Sinai_logo_color.png",
 #     credentials = creds_file(file = email_credential_location),
 #     subject = email_subject
 #   )
+source("send_email.R")
 ```
 
-```{r connect_email_setup, echo=FALSE}
-compose_email(header = sinai_logo,
-              body = render_connect_email("Scripts/email_body.Rmd")$html_html,
-              footer = "This is an auto generated email") %>%
-  attach_connect_email(
-    subject = email_subject#,
-    #attach_output = TRUE,
-    #attachments = c("dallas_home_sales.csv", "austin_home_sales.csv")
-  )
-```
+# ```{r connect_email_setup, echo=FALSE}
+# compose_email(header = sinai_logo,
+#               body = render_connect_email("Scripts/email_body.Rmd")$html_html,
+#               footer = "This is an auto generated email") %>%
+#   attach_connect_email(
+#     subject = email_subject#,
+#     #attach_output = TRUE,
+#     #attachments = c("dallas_home_sales.csv", "austin_home_sales.csv")
+#   )
+# ```
