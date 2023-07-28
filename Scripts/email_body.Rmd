@@ -4,4 +4,7 @@ output: blastula::blastula_email
 ---
 
 
-This is a simple test email.
+Please find the data for the previous month attached to this email.
+
+Best,
+Armando
