@@ -4,7 +4,7 @@ output: blastula::blastula_email
 ---
 
 
-Please find the data for the previous month attached to this email.
+Please find the data for the previous month attached.
 
 Best,
 Armando

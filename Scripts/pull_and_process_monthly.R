@@ -26,6 +26,8 @@ save_compressed_file_path <- gsub("\\<csv\\>","zip",save_compressed_file_path)
 
 zip(save_compressed_file_path, save_uncompressed_file_path, include_directories = FALSE, mode = "cherry-pick")
 
+min_date <- format(min(previous_month_data$APPT_DTTM), "%m/%d/%Y")
+max_date <- format(max(previous_month_data$APPT_DTTM), "%m/%d/%Y")
 
 
 
