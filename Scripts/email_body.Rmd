@@ -3,10 +3,10 @@ title: "Email Document"
 output: blastula::blastula_email
 ---
 
-```{r, include=FALSE}
-#run monthly processing
-source("pull_and_process_monthly.R")
-```
+# ```{r, include=FALSE}
+# #run monthly processing
+# source("pull_and_process_monthly.R")
+# ```
 
 Hello,
 
