@@ -24,7 +24,7 @@ write_csv(previous_month_data, save_uncompressed_file_path)
 save_compressed_file_path <- gsub("\\<Uncompressed\\>","Compressed",save_uncompressed_file_path)
 save_compressed_file_path <- gsub("\\<csv\\>","zip",save_compressed_file_path)
 
-zip(save_compressed_file_path, save_uncompressed_file_path)
+zip(save_compressed_file_path, save_uncompressed_file_path, include_directories = FALSE)
 
 
 
