@@ -22,7 +22,7 @@ source("Scripts/pull_and_process_monthly.R")
 
 #
 sinai_logo <- add_image(file = "www/Sinai_logo_color.png",
-                        width = 100)
+                        width = 200)
 
 ##Use blastula to construct email to send
 compose_email(header = sinai_logo,
