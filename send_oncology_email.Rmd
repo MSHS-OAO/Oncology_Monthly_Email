@@ -26,7 +26,7 @@ sinai_logo <- add_image(file = "www/Sinai_logo_color.png",
 
 ##Use blastula to construct email to send
 compose_email(header = sinai_logo,
-              body = render_connect_email("Scripts/email_body.Rmd")$html_html,
+              body = render_email("Scripts/email_body.Rmd")$html_html,
               footer = "This is an auto generated email") %>%
   add_attachment(
     file = save_compressed_file_path,
