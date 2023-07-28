@@ -9,7 +9,3 @@ Please find the Oncology data for `r min_date` `r max_date` attached.
 
 Best,  
 Armando
-
-```{cat, engine.opts=list(file = "footer.html")}
-<p>This is an auto generated email</p>
-```
