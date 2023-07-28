@@ -22,9 +22,17 @@ source("Scripts/pull_and_process_monthly.R")
 
 ##Use blastula to construct email to send
 
-
-# render_email(input = "Scripts/email_body.Rmd",
-# ) %>%
+compose_email(
+  body = md(glue("
+  Hello,
+  
+  Please find the Oncology data for {min_date}-{max_date} attached.
+    
+    -Armando"
+  )
+  ),
+  footer = md(glue("This is an automated email."))
+) %>%
   add_attachment(
     file = save_compressed_file_path,
     filename = paste0("Oncology Data ", month_year, ".zip")
