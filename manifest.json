@@ -4,7 +4,7 @@
   "platform": "4.2.3",
   "metadata": {
     "appmode": "rmd-static",
-    "primary_rmd": "Scripts/email_body.Rmd",
+    "primary_rmd": "send_oncology_email.Rmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
@@ -1972,26 +1972,14 @@
     }
   },
   "files": {
-    "email_creds": {
-      "checksum": "2f7071d30a63e0bc29b598129e356dbd"
-    },
-    "README.md": {
-      "checksum": "26b58a4e2202a4a276e3f4edc468819c"
-    },
-    "Scripts/email_body.html": {
-      "checksum": "2597be344b8e9bb5f79e82932e7a2cc5"
-    },
     "Scripts/email_body.Rmd": {
-      "checksum": "5526db54326514bd7e3c51d28b2fe529"
-    },
-    "Scripts/footer.html": {
-      "checksum": "f03caf5a4ea8bfd8027c7d508d8d0bfe"
+      "checksum": "62e9ad2d01a09cc3e7b974dcff1de496"
     },
     "Scripts/pull_and_process_monthly.R": {
       "checksum": "f2b8dab50b9bf4364427a51b09d9780a"
     },
     "send_oncology_email.Rmd": {
-      "checksum": "d9a91cc1c1c2726d903f83c76c5cbde7"
+      "checksum": "6c6aa9e217555862516891dc062c106a"
     },
     "www/Sinai_logo_color.png": {
       "checksum": "1d2ba7ac0d235e444e7a5f4f2cc3ece5"

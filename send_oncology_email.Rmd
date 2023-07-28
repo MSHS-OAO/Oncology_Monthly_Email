@@ -21,21 +21,20 @@ email_subject <- "Oncology Monthly Data Pull"
 sinai_logo <- add_image(file = "www/Sinai_logo_color.png",
                         width = 200)
 
-# ##Use blastula to construct email to send
-# compose_email(header = sinai_logo,
-#               body = render_connect_email("Scripts/email_body.Rmd")$html_html,
-#               footer = "This is an auto generated email") %>%
-#   add_attachment(
-#     file = save_compressed_file_path,
-#     filename = paste0("Oncology Data ", "month_year", ".zip")
-#   ) %>%
-#   smtp_send(
-#     from = "armando.villegas@mssm.edu",
-#     to = send_list,
-#     credentials = creds_file(file = email_credential_location),
-#     subject = email_subject
-#   )
-source("send_email.R")
+##Use blastula to construct email to send
+compose_email(header = sinai_logo,
+              body = render_connect_email("Scripts/email_body.Rmd")$html_html,
+              footer = "This is an auto generated email") %>%
+  add_attachment(
+    file = save_compressed_file_path,
+    filename = paste0("Oncology Data ", "month_year", ".zip")
+  ) %>%
+  smtp_send(
+    from = "armando.villegas@mssm.edu",
+    to = send_list,
+    credentials = creds_file(file = email_credential_location),
+    subject = email_subject
+  )
 ```
 
 # ```{r connect_email_setup, echo=FALSE}
