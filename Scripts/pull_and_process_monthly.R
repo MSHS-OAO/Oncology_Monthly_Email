@@ -3,6 +3,7 @@ library(odbc)
 library(lubridate)
 library(glue)
 library(readr)
+library(zip)
 
 dsn <- "OAO Cloud DB"
 
@@ -15,8 +16,16 @@ month_year <- format(last_month, '%Y-%m')
 sql_statement <- glue("SELECT * FROM ONCOLOGY_ACCESS WHERE APPT_MONTH_YEAR = '{month_year}'")
 previous_month_data <- dbGetQuery(conn, sql_statement)
 
-save_file_path <- paste0("/SharedDrive/deans/Presidents/HSPI-PM/Operations Analytics and Optimization/Projects/Service Lines/Oncology/Monthly Oncology Email/Oncology_Data_",
-                         month_year, ".csv")
+save_uncompressed_file_path <- paste0("/SharedDrive/deans/Presidents/HSPI-PM/Operations Analytics and Optimization/Projects/Service Lines/Oncology/Monthly Oncology Email/Uncompressed/Oncology_Data_",
+                         month_year, " created ", format(Sys.time(), "%Y-%m-%d %H %M"), ".csv")
 
-write_csv(previous_month_data, save_file_path)
+write_csv(previous_month_data, save_uncompressed_file_path)
+
+save_compressed_file_path <- gsub("\\<Uncompressed\\>","Compressed",save_uncompressed_file_path)
+save_compressed_file_path <- gsub("\\<csv\\>","zip",save_compressed_file_path)
+
+zip(save_compressed_file_path, save_uncompressed_file_path)
+
+
+
 
