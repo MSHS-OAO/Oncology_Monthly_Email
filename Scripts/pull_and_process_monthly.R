@@ -17,14 +17,14 @@ sql_statement <- glue("SELECT * FROM ONCOLOGY_ACCESS WHERE APPT_MONTH_YEAR = '{m
 previous_month_data <- dbGetQuery(conn, sql_statement)
 
 save_uncompressed_file_path <- paste0("/SharedDrive/deans/Presidents/HSPI-PM/Operations Analytics and Optimization/Projects/Service Lines/Oncology/Monthly Oncology Email/Uncompressed/Oncology_Data_",
-                         month_year, " created ", format(Sys.time(), "%Y-%m-%d %H %M"), ".csv")
+                         month_year, " created ", format(Sys.time(), "%Y-%m-%d %H.%M"), ".csv")
 
 write_csv(previous_month_data, save_uncompressed_file_path)
 
 save_compressed_file_path <- gsub("\\<Uncompressed\\>","Compressed",save_uncompressed_file_path)
 save_compressed_file_path <- gsub("\\<csv\\>","zip",save_compressed_file_path)
 
-zip(save_compressed_file_path, save_uncompressed_file_path, include_directories = FALSE)
+zip(save_compressed_file_path, save_uncompressed_file_path, include_directories = FALSE, mode = "cherry-pick")
 
 
 
