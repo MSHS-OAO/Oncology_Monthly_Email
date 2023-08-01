@@ -13,7 +13,7 @@ todays_date <- Sys.Date()
 last_month <- todays_date %m-% months(1)
 month_year <- format(last_month, '%Y-%m')
 
-sql_statement <- glue("SELECT * FROM ONCOLOGY_ACCESS WHERE APPT_MONTH_YEAR = '{month_year}'")
+sql_statement <- glue("SELECT * FROM ONCOLOGY_ACCESS WHERE APPT_MONTH_YEAR = '{month_year}' AND APPT_STATUS = 'Arrived'")
 previous_month_data <- dbGetQuery(conn, sql_statement)
 
 save_uncompressed_file_path <- paste0("/SharedDrive/deans/Presidents/HSPI-PM/Operations Analytics and Optimization/Projects/Service Lines/Oncology/Monthly Oncology Email/Uncompressed/Oncology_Data_",
