@@ -5,7 +5,8 @@ library(glue)
 library(readr)
 library(zip)
 
-dsn <- "OAO Cloud DB"
+#dsn <- "OAO Cloud DB"
+dsn <- "OAO Cloud DB Production"
 
 conn <- dbConnect(odbc(), dsn)
 
